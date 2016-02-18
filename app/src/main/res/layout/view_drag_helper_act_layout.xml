@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aliouswang.swipeback.widget.BaseSwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/swipe_layout"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@android:color/holo_blue_bright"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+</com.aliouswang.swipeback.widget.BaseSwipeLayout>
