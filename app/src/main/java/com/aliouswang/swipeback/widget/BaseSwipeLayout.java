@@ -1,12 +1,15 @@
 package com.aliouswang.swipeback.widget;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 /**
@@ -126,6 +129,7 @@ public class BaseSwipeLayout extends FrameLayout{
             @Override
             public void onEdgeDragStarted(int edgeFlags, int pointerId) {
                 mCurEdgeFlag = edgeFlags;
+                if (mDragView == null) mDragView = getChildAt(0);
                 mViewDragHelper.captureChildView(mDragView, pointerId);
             }
         });
@@ -154,8 +158,6 @@ public class BaseSwipeLayout extends FrameLayout{
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        mAutoBackOrignalPoint.x = mDragView.getLeft();
-        mAutoBackOrignalPoint.y = mDragView.getTop();
     }
 
     @Override
@@ -174,6 +176,23 @@ public class BaseSwipeLayout extends FrameLayout{
 
     public interface OnFinishScroll {
         void finish();
+    }
+
+    private Activity mActivity;
+    public void attachToActivity(Activity activity) {
+        this.mActivity = activity;
+        TypedArray a = activity.getTheme().obtainStyledAttributes(new int[]{
+                android.R.attr.windowBackground
+        });
+        int background = a.getResourceId(0, 0);
+        a.recycle();
+        ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
+        ViewGroup decorChild = (ViewGroup) decorView.getChildAt(0);
+        decorChild.setBackgroundResource(background);
+        decorView.removeView(decorChild);
+        addView(decorChild);
+        decorView.addView(this);
+
     }
 
 }
