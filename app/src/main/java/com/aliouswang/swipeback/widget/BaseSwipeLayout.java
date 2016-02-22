@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Point;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -23,6 +22,7 @@ public class BaseSwipeLayout extends FrameLayout{
     private Point mCurArrivePoint = new Point();
 
     private int mCurEdgeFlag = ViewDragHelper.EDGE_LEFT;
+    private int mSwipeEdge = ViewDragHelper.EDGE_LEFT;
 
     public BaseSwipeLayout(Context context) {
         this(context, null);
@@ -37,6 +37,12 @@ public class BaseSwipeLayout extends FrameLayout{
         init();
     }
 
+    public void setSwipeEdge(int swipeEdge) {
+        this.mSwipeEdge = swipeEdge;
+        mViewDragHelper.setEdgeTrackingEnabled(swipeEdge);
+    }
+
+
     private void init() {
         mViewDragHelper = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() {
             @Override
@@ -47,11 +53,9 @@ public class BaseSwipeLayout extends FrameLayout{
             @Override
             public int clampViewPositionHorizontal(View child, int left, int dx) {
                 mCurArrivePoint.x = left;
-                Log.e("swipe_view", "left:" + left);
                 if (mCurEdgeFlag != ViewDragHelper.EDGE_BOTTOM) {
                     return left;
                 }else return 0;
-
             }
 
             @Override
@@ -97,7 +101,6 @@ public class BaseSwipeLayout extends FrameLayout{
             @Override
             public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
                 super.onViewPositionChanged(changedView, left, top, dx, dy);
-                Log.e("swipe_view", "position changed :left:" + left);
                 switch (mCurEdgeFlag) {
                     case ViewDragHelper.EDGE_LEFT:
                         if (left >= getWidth()) {
@@ -130,7 +133,7 @@ public class BaseSwipeLayout extends FrameLayout{
             }
         });
 
-        mViewDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_ALL);
+        mViewDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT);
     }
 
     @Override

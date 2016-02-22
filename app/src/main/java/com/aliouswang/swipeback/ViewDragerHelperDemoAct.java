@@ -2,6 +2,7 @@ package com.aliouswang.swipeback;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.ViewDragHelper;
 
 import com.aliouswang.swipeback.widget.BaseSwipeLayout;
 
@@ -23,5 +24,6 @@ public class ViewDragerHelperDemoAct extends Activity{
                 ViewDragerHelperDemoAct.this.finish();
             }
         });
+        swipe_layout.setSwipeEdge(ViewDragHelper.EDGE_RIGHT);
     }
 }
