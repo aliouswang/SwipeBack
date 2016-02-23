@@ -108,21 +108,21 @@ public class BaseSwipeLayout extends FrameLayout{
                     case ViewDragHelper.EDGE_LEFT:
                         if (left >= getWidth()) {
                             if (mFinishScroll != null) {
-                                mFinishScroll.finish();
+                                mFinishScroll.complete();
                             }
                         }
                         break;
                     case ViewDragHelper.EDGE_RIGHT:
                         if (left <= -getWidth()) {
                             if (mFinishScroll != null) {
-                                mFinishScroll.finish();
+                                mFinishScroll.complete();
                             }
                         }
                         break;
                     case ViewDragHelper.EDGE_BOTTOM:
                         if (top <= -getHeight()) {
                             if (mFinishScroll != null) {
-                                mFinishScroll.finish();
+                                mFinishScroll.complete();
                             }
                         }
                         break;
@@ -173,12 +173,12 @@ public class BaseSwipeLayout extends FrameLayout{
 
     private OnFinishScroll mFinishScroll;
 
-    public void setmFinishScroll(OnFinishScroll finishScroll) {
+    public void setOnFinishScroll(OnFinishScroll finishScroll) {
         this.mFinishScroll = finishScroll;
     }
 
     public interface OnFinishScroll {
-        void finish();
+        void complete();
     }
 
     private Activity mActivity;

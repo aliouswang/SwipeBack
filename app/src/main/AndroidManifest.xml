@@ -22,6 +22,10 @@
         <activity android:name=".ViewDragerHelperDemoAct"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             />
+
+        <activity android:name=".NormalSwipeBackAct"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            />
     </application>
 
 </manifest>

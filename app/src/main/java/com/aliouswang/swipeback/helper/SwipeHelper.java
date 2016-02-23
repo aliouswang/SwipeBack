@@ -21,9 +21,9 @@ public class SwipeHelper {
     public void onActivityCreate() {
         mBaseSwipeLayout = (BaseSwipeLayout) LayoutInflater.from(mActivity)
                 .inflate(R.layout.swipe_layout, null);
-        mBaseSwipeLayout.setmFinishScroll(new BaseSwipeLayout.OnFinishScroll() {
+        mBaseSwipeLayout.setOnFinishScroll(new BaseSwipeLayout.OnFinishScroll() {
             @Override
-            public void finish() {
+            public void complete() {
                 mActivity.finish();
             }
         });
@@ -33,5 +33,8 @@ public class SwipeHelper {
         mBaseSwipeLayout.attachToActivity(mActivity);
     }
 
+    public void setSwipeEdge(int edgeFlag) {
+        mBaseSwipeLayout.setSwipeEdge(edgeFlag);
+    }
 
 }

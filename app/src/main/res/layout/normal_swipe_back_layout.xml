@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aliouswang.swipeback.widget.BaseSwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/swipe_layout"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_red_light"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_green_light"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_purple"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_green_dark"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_red_dark"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Swipe Back Demo"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_orange_dark"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</com.aliouswang.swipeback.widget.BaseSwipeLayout>

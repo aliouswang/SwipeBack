@@ -14,7 +14,15 @@
     tools:context="com.aliouswang.swipeback.MainActivity">
 
     <Button
+        android:id="@+id/btn_normal_swipe_back"
+        android:text="goto to normal swipe back page"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
         android:id="@+id/btn_view_drag_helper"
+        android:layout_below="@+id/btn_normal_swipe_back"
         android:text="goto to view drag demo page"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
